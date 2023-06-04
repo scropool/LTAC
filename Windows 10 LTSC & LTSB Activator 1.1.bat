@@ -21,5 +21,5 @@ slmgr /skms kms8.msguides.com
 slmgr.vbs /ato
 cls
 ping localhost -n 2 >nul
-echo Windows 10 LTSC Activated!
+echo Windows 10 LTSC-LTSB Activated!
 ping localhost -n 2 >nul
