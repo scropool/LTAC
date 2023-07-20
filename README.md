@@ -1,4 +1,8 @@
 # Windows 10 LTSC-LTSB Activation Tool v1.1
 This is a batch script to Activate Windows 10 LTSC & LTSB.
 
--Windows 10 1507 2015 LTSB is not supported
+#Supported Versions#
+-LTSB 2021 (21H1)
+-LTSB 2019 (1809)
+-LTSB 2016 (1607)
+-LTSB 2015 (1507)
