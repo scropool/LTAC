@@ -1,5 +1,5 @@
 @echo off
-title Windows 10 LTAC v1.1
+title Windows 10 LTAC v1.0
 color 9
 echo Windows 10 LTSC-LTSB Activator Tool v1.0 by crouch86
 ping localhost -n 3 >nul
