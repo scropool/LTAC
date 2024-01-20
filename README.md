@@ -4,7 +4,7 @@
 <p align="center">This is a batch script to Activate Windows 10 LTSC & LTSB.</p>
 <hr>
 
-# Supported Versions
+## Supported Versions
 
 - LTSC 2021 (21H1)
 
