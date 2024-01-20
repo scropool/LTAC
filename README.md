@@ -5,11 +5,7 @@
 <hr>
 
 <h1 align="center">Supported Versions</h1>
-
-- LTSC 2021 (21H1)
-
-- LTSC 2019 (1809)
-
-- LTSB 2016 (1607)
-
-- LTSB 2015 (1507)
+<p align="center">LTSC 2021 (21H1)</p>
+<p align="center">LTSC 2019 (1809)</p>
+<p align="center">LTSC 2016 (1607)</p>
+<p align="center">LTSC 2015 (1507)</p>
