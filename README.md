@@ -8,5 +8,5 @@
 <p align="center">• Windows 11 LTSC 2024 (23H2)</p>
 <p align="center">• Windows 10 LTSC 2021 (21H1)</p>
 <p align="center">• Windows 10 LTSC 2019 (1809)</p>
-<p align="center">• Windows 10 LTSC 2016 (1607)</p>
-<p align="center">• Windows 10 LTSC 2015 (1507)</p>
+<p align="center">• Windows 10 LTSB 2016 (1607)</p>
+<p align="center">• Windows 10 LTSB 2015 (1507)</p>
