@@ -2,6 +2,7 @@
 <h1 align="center">LTAC - LTSC & LTSB Activator Tool</h1>
 
 <p align="center">This is a batch script to Activate Windows 10 - 11 LTSC & LTSB.</p>
+<p align="center">⚠️ must be run with Administrator rights</p>
 <p align="center">• Made by crouch86</p>
 <hr>
 
