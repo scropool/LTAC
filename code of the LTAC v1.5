@@ -1,0 +1,121 @@
+@echo off
+title LTAC
+color 4
+
+rem ----[ Administrator Control ]----
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+    echo ######## ########  ########   #######  ########  
+    echo ##       ##     ## ##     ## ##     ## ##     ## 
+    echo ##       ##     ## ##     ## ##     ## ##     ## 
+    echo ######   ########  ########  ##     ## ########  
+    echo ##       ##   ##   ##   ##   ##     ## ##   ##   
+    echo ##       ##    ##  ##    ##  ##     ## ##    ##  
+    echo ######## ##     ## ##     ##  #######  ##     ## 
+    echo.
+    echo.
+    echo ####### ERROR: ADMINISTRATOR PRIVILEGES REQUIRED #########
+    echo This script must be run as administrator to work properly!
+    echo ##########################################################
+    echo.
+    echo.
+    echo Press any key to exit.
+  pause>nul
+  exit /b 1
+)
+
+:MENU
+color 3
+cls
+
+echo.
+echo         LTAC v1.5 by yccallmegus
+echo.
+echo         1. Activate
+echo         2. Activation status
+echo         3. Delete Current KMS Product Key
+echo         4. Exit
+echo.
+
+set /p choice=Choice (1-4): 
+
+if "%choice%" == "" (
+  goto MENU
+)
+
+if /i "%choice%"=="1" (
+  goto ACT
+)
+
+if /i "%choice%"=="2" (
+  goto STAT
+)
+
+if /i "%choice%"=="3" (
+  goto DEL
+)
+
+if /i "%choice%"=="4" (
+  goto EXIT
+)
+
+echo Wrong choice! Please try again.
+goto MENU
+
+:ACT
+rem ----[ Activation Waiting ]----
+echo Please Wait..
+ping localhost -n 3 >nul
+
+rem ---[ Setting Key ]---
+slmgr.vbs /ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D
+if %errorlevel% neq 0 (
+    echo An error occurred while setting the key!
+    pause>nul
+    exit /b 1
+)
+
+rem ---[ Setting KMS Server ]---
+slmgr /skms kms.digiboy.ir  
+if %errorlevel% neq 0 (
+    echo An error occurred while setting up the KMS server!
+    pause>nul
+    exit /b 1
+)
+
+rem ---[ Activation ]---
+slmgr.vbs /ato
+if %errorlevel% neq 0 (
+    echo The activation process failed!
+    pause>nul
+    exit /b 1
+)
+
+cls
+ping localhost -n 2 >nul
+echo Activation was successfully completed!
+ping localhost -n 2 >nul
+pause>nul
+goto MENU
+
+:STAT
+rem ---[ Activation Status ]---
+slmgr /dlv
+pause>nul
+goto MENU
+
+:DEL
+rem ---[ Remove Key ]---
+slmgr /upk
+if %errorlevel% neq 0 (
+  echo An error occurred while removing the key!
+  pause>nul
+  goto MENU
+)
+
+echo The current KMS product key has been deleted.
+pause>nul
+goto MENU
+
+:EXIT
+exit /b 0
