@@ -3,7 +3,7 @@
 
 <p align="center">This is a batch script to Activate Windows 10 - 11 LTSC & LTSB.</p>
 <p align="center">⚠️ must be run with Administrator rights</p>
-<p align="center">• Made by crouch86</p>
+<p align="center">• Made by yccallmegus</p>
 <hr>
 
 <h1 align="center">Supported Versions</h1>
