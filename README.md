@@ -1,13 +1,11 @@
 <h1 align="center">LTAC</h1>
-
+<p align="center">
+  <img src="https://badgen.net/badge/icon/windows?icon=windows&label">
+</p>
 <p align="center">This is a batch script to Activate Windows 10 - 11 LTSC & LTSB.</p>
 <p align="center">⚠️ Must be run with Administrator rights</p>
 <p align="center">• Made by scropool</p>
 <hr>
-
-<p align="center">
-  <img src="https://badgen.net/badge/icon/windows?icon=windows&label">
-</p>
 
 <h1 align="center">Supported Windows Versions</h1>
 <p align="center">• Windows 11 LTSC 2024 (24H2 or newer)</p>
