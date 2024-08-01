@@ -1,5 +1,6 @@
-
-![LTAC-Logo](https://github.com/user-attachments/assets/da70c518-e108-4060-a1d0-dc771591e6ad)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/da70c518-e108-4060-a1d0-dc771591e6ad" alt="LTAC-Logo" width="200">
+</p>
 
 <h1 align="center">LTAC</h1>
 
