@@ -5,6 +5,10 @@
 <p align="center">• Made by scropool</p>
 <hr>
 
+<p align="center">
+  <img src="https://badgen.net/badge/icon/windows?icon=windows&label">
+</p>
+
 <h1 align="center">Supported Windows Versions</h1>
 <p align="center">• Windows 11 LTSC 2024 (24H2 or newer)</p>
 <p align="center">• Windows 10 LTSC 2021 (21H2)</p>
