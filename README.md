@@ -4,6 +4,9 @@
   <a href="https://github.com/scropool/LTAC">
     <img src="https://badgen.net/badge/icon/windows?icon=windows&label">
   </a>
+  <a href="https://github.com/scropool/LTAC/releases">
+    <img src="https://badgen.net/github/release/scropool/LTAC">
+  </a>
 </p>
 
 <p align="center">This is a batch script to Activate Windows 10 - 11 LTSC & LTSB.</p>
