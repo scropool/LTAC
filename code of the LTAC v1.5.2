@@ -1,0 +1,198 @@
+@echo off
+title LTAC
+color 4
+
+rem ----[ Administrator Control ]----
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+    echo ######## ########  ########   #######  ########  
+    echo ##       ##     ## ##     ## ##     ## ##     ## 
+    echo ##       ##     ## ##     ## ##     ## ##     ## 
+    echo ######   ########  ########  ##     ## ########  
+    echo ##       ##   ##   ##   ##   ##     ## ##   ##   
+    echo ##       ##    ##  ##    ##  ##     ## ##    ##  
+    echo ######## ##     ## ##     ##  #######  ##     ## 
+    echo.
+    echo.
+    echo ####### ERROR: ADMINISTRATOR PRIVILEGES REQUIRED #########
+    echo This script must be run as administrator to work properly!
+    echo ##########################################################
+    echo.
+    echo.
+    echo Press any key to exit.
+  pause>nul
+  exit /b 1
+)
+
+:MENU
+color 3
+cls
+
+echo.
+echo         LTAC v1.5.2 by scropool
+echo.
+echo         1. Activate
+echo         2. Activation status
+echo         3. Delete Current KMS Product Key
+echo         4. Change KMS Server
+echo         5. Test KMS Server
+echo.
+echo         6. Exit
+echo.
+
+set /p choice=Choice (1-6): 
+
+if "%choice%" == "" (
+  goto MENU
+)
+
+if /i "%choice%"=="1" (
+  goto ACT
+)
+
+if /i "%choice%"=="2" (
+  goto STAT
+)
+
+if /i "%choice%"=="3" (
+  goto DEL
+)
+
+if /i "%choice%"=="4" (
+  goto CHANGE
+)
+
+if /i "%choice%"=="5" (
+  goto TEST
+)
+
+if /i "%choice%"=="6" (
+  goto EXIT
+)
+
+echo Wrong choice! Please try again.
+goto MENU
+
+:ACT
+rem ----[ Activation Waiting ]----
+echo Please Wait..
+ping localhost -n 3 >nul
+
+rem ---[ Setting Key ]---
+slmgr.vbs /ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D
+if %errorlevel% neq 0 (
+    echo An error occurred while setting the key!
+    pause>nul
+    exit /b 1
+)
+
+rem ---[ Setting KMS Server ]---
+if not defined new_server (
+  set new_server=kms.digiboy.ir
+)
+slmgr /skms %new_server%
+if %errorlevel% neq 0 (
+  echo An error occurred while setting up the KMS server!
+  pause>nul
+  exit /b 1
+)
+
+rem ---[ Activation ]---
+slmgr.vbs /ato
+if %errorlevel% neq 0 (
+    echo The activation process failed!
+    pause>nul
+    exit /b 1
+)
+
+cls
+ping localhost -n 2 >nul
+echo Activation was successfully completed!
+ping localhost -n 2 >nul
+goto MENU
+
+:STAT
+rem ---[ Activation Status ]---
+slmgr /dlv
+pause>nul
+goto MENU
+
+:CHANGE
+cls
+echo.
+echo       Change KMS Server
+echo.
+echo       1. kms.digiboy.ir (online server) # Default
+echo       2. kms.lotro.cc (offline server)
+echo       3. kms8.MSGuides.com (offline server)
+echo.
+echo       4. Go to MENU
+echo.
+set /p choice=Choice (1-4):
+
+if "%choice%" == "4" (
+  goto MENU
+)
+if "%choice%" == "1" (
+  set new_server=kms.digiboy.ir
+) else if "%choice%" == "2" (
+  set new_server=kms.lotro.cc
+) else if "%choice%" == "3" (
+  set new_server=kms8.MSGuides.com
+) else (
+  echo Invalid choice!
+  goto CHANGE
+)
+
+echo KMS server successfully changed to %new_server%.
+pause >nul
+goto MENU
+
+:TEST
+cls
+echo.
+echo       Test KMS Server
+echo.
+echo       Enter the KMS server to test:
+echo.
+set /p test_server=
+
+if "%test_server%" == "" (
+  echo Invalid server address!
+  echo.
+  echo Press any key to MENU
+  pause >nul
+  goto MENU
+)
+
+echo Testing %test_server%...
+ping %test_server% -n 3 >nul
+if %errorlevel% neq 0 (
+  echo The KMS server %test_server% is not reachable!
+  echo.
+  echo Press any key to MENU
+  pause >nul
+  goto MENU
+)
+
+echo The KMS server %test_server% is reachable.
+echo.
+echo Press any key to MENU
+pause >nul
+goto MENU
+
+:DEL
+rem ---[ Remove Key ]---
+slmgr /upk
+if %errorlevel% neq 0 (
+  echo An error occurred while removing the key!
+  pause>nul
+  goto MENU
+)
+
+echo The current KMS product key has been deleted.
+pause>nul
+goto MENU
+
+:EXIT
+exit /b 0
