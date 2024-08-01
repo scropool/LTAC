@@ -1,5 +1,6 @@
 <h1 align="center">LTAC</h1>
-[![](https://badgen.net/badge/icon/windows?icon=windows&label)](https://github.com/scropool/LTAC) [![](https://badgen.net/github/release/scropool/LTAC)](https://github.com/scropool/LTAC/releases)
+[![](https://badgen.net/badge/icon/windows?icon=windows&label)](https://github.com/scropool/LTAC) 
+[![](https://badgen.net/github/release/scropool/LTAC)](https://github.com/scropool/LTAC/releases)
 <p align="center">This is a batch script to Activate Windows 10 - 11 LTSC & LTSB.</p>
 <p align="center">⚠️ Must be run with Administrator rights</p>
 <p align="center">• Made by scropool</p>
