@@ -1,0 +1,271 @@
+@echo off
+title LTAC
+color 4
+
+rem ----[ Administrator Control ]----
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+    echo.
+    echo ######## ########  ########   #######  ########  
+    echo ##       ##     ## ##     ## ##     ## ##     ## 
+    echo ##       ##     ## ##     ## ##     ## ##     ## 
+    echo ######   ########  ########  ##     ## ########  
+    echo ##       ##   ##   ##   ##   ##     ## ##   ##   
+    echo ##       ##    ##  ##    ##  ##     ## ##    ##  
+    echo ######## ##     ## ##     ##  #######  ##     ## 
+    echo.
+    echo.
+    echo ####### ERROR: ADMINISTRATOR PRIVILEGES REQUIRED #########
+    echo This script must be run as administrator to work properly!
+    echo ##########################################################
+    echo.
+    echo.
+    echo Press any key to exit.
+    pause >nul
+    exit /b 1
+)
+
+:MENU
+color 3
+cls
+
+echo.
+echo         LTAC v1.5.5 by scropool
+echo.
+echo         1. Activate
+echo         2. Activation status
+echo         3. Delete Current KMS Product Key
+echo         4. Change KMS Server
+echo         5. Test KMS Server
+echo         6. Check for Updates
+echo.
+echo         7. Exit
+echo.
+
+set /p choice=Choice (1-7): 
+
+if "%choice%" == "" (
+    echo Invalid choice! Please enter a number between 1 and 7.
+    pause >nul
+    goto MENU
+)
+
+if "%choice%"=="1" (
+    goto ACT
+)
+if "%choice%"=="2" (
+    goto STAT
+)
+if "%choice%"=="3" (
+    goto DEL
+)
+if "%choice%"=="4" (
+    goto CHANGE
+)
+if "%choice%"=="5" (
+    goto TEST
+)
+if "%choice%"=="6" (
+    goto UPDATE
+)
+if "%choice%"=="7" (
+    goto EXIT
+)
+
+echo Wrong choice! Please try again.
+pause >nul
+goto MENU
+
+:ACT
+rem ----[ Activation Waiting ]----
+echo.
+echo Please Wait..
+echo.
+ping localhost -n 3 >nul
+
+rem ---[ Setting Keys ]---
+set keys=M7XTQ-FN8P6-TTKYV-9D4CC-J462D WNMTR-4C88C-JK8YV-HQ7T2-76DF9 DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ
+
+for %%k in (%keys%) do (
+    echo Trying key %%k...
+	echo.
+    slmgr.vbs /ipk %%k
+    if %errorlevel% equ 0 (
+        echo Key %%k successfully set!
+		echo.
+        set key_set=true
+        goto SET_SERVER
+    )
+)
+
+if not defined key_set (
+    echo.
+    echo An error occurred while setting the keys!
+    pause >nul
+    goto MENU
+)
+
+:SET_SERVER
+rem ---[ Setting KMS Server ]---
+if not defined new_server (
+    set new_server=kms.digiboy.ir
+)
+slmgr /skms %new_server%
+if %errorlevel% neq 0 (
+    echo.
+    echo An error occurred while setting up the KMS server!
+    pause >nul
+    goto MENU
+)
+
+rem ---[ Activation ]---
+slmgr.vbs /ato
+if %errorlevel% neq 0 (
+    echo.
+    echo The activation process failed!
+    pause >nul
+    goto MENU
+)
+
+ping localhost -n 2 >nul
+echo Activation was successfully completed!
+echo.
+echo Press any key to MENU
+pause >nul
+goto MENU
+
+:STAT
+rem ---[ Activation Status ]---
+slmgr /dlv
+pause >nul
+goto MENU
+
+:CHANGE
+cls
+echo.
+echo       Change KMS Server
+echo.
+echo       1. kms.digiboy.ir (online server) # Default
+echo       2. kms.lotro.cc (offline server)
+echo       3. kms8.MSGuides.com (offline server)
+echo.
+set /p choice=Choice (1-3):
+
+if "%choice%" == "1" (
+    set new_server=kms.digiboy.ir
+) else if "%choice%" == "2" (
+    set new_server=kms.lotro.cc
+) else if "%choice%" == "3" (
+    set new_server=kms8.MSGuides.com
+) else (
+    echo.
+    echo Invalid choice!
+    pause >nul
+    goto CHANGE
+)
+
+echo.
+echo KMS server successfully changed to %new_server% this server will be used for next activation.
+echo.
+echo Press any key to MENU
+pause >nul
+goto MENU
+
+:TEST
+cls
+echo.
+echo       Test KMS Server
+echo.
+echo       Enter the KMS server to test:
+echo.
+set /p test_server=
+
+if "%test_server%" == "" (
+    echo Invalid server address!
+    echo.
+    echo Press any key to MENU
+    pause >nul
+    goto MENU
+)
+
+echo.
+echo Testing %test_server%...
+ping %test_server% -n 3 >nul
+if %errorlevel% neq 0 (
+    echo.
+    echo The KMS server %test_server% is not reachable!
+    echo.
+    echo Press any key to MENU
+    pause >nul
+    goto MENU
+)
+
+echo.
+echo The KMS server %test_server% is reachable.
+echo.
+echo Press any key to MENU
+pause >nul
+goto MENU
+
+:UPDATE
+rem ----[ Update Check ]----
+echo.
+echo Checking for updates...
+curl -s https://api.github.com/repos/scropool/LTAC/releases/latest > latest_version.txt
+
+if %errorlevel% neq 0 (
+    echo.
+    echo Error: curl command failed. Please ensure curl is installed and accessible.
+    pause >nul
+    goto MENU
+)
+
+findstr /i "tag_name" latest_version.txt > nul
+if %errorlevel% neq 0 (
+    echo.
+    echo Error: Failed to parse the latest version from the GitHub API response.
+    pause >nul
+    goto MENU
+)
+
+for /f "tokens=2 delims=: " %%i in ('findstr /i "tag_name" latest_version.txt') do set latest_version=%%i
+set latest_version=%latest_version:~1,-2%
+
+set current_version=v1.5.5
+
+if not "%latest_version%"=="%current_version%" (
+    echo.
+    echo New version available: %latest_version%
+    echo Please visit https://github.com/scropool/LTAC/releases to download the latest version.
+    echo.
+    del latest_version.txt
+    echo Press any key to MENU
+    pause >nul
+    goto MENU
+) else (
+    echo.
+    echo You are using the latest version: %current_version%.
+    echo.
+    del latest_version.txt
+    echo Press any key to MENU
+    pause >nul
+    goto MENU
+)
+
+:DEL
+rem ---[ Remove Key ]---
+slmgr /upk
+if %errorlevel% neq 0 (
+    echo.
+    echo An error occurred while removing the key!
+    pause >nul
+    goto MENU
+)
+
+echo.
+echo The current KMS product key has been deleted.
+pause >nul
+goto MENU
+
+:EXIT
+exit /b 0
