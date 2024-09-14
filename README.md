@@ -11,8 +11,9 @@
 </p>
 
 <p align="center">This is a batch script to Activate Windows 10 - 11 LTSC & LTSB.</p>
-<p align="center">⚠️ Must be run with Administrator rights</p>
-<p align="center">• Made by scropool</p>
+<p align="center">❗ LTAC does not yet support LTSC IoT versions, it is only for normal LTSC versions IoT support will be added soon</p>
+<p align="center">⚠️ This script works with administrator rights</p>
+<p align="center">• Made by scropool, made with love</p>
 <hr>
 
 <h1 align="center">Supported Windows Versions</h1>
