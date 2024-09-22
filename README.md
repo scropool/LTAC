@@ -17,18 +17,18 @@
 
 <h1 align="center">Supported Windows Versions</h1>
 
-|                   Windows Version                    | Activation Status | Tested  |
-|:-----------------------------------------------------:|:-----------------:|:-------:|
-|      Windows 11 LTSC 2024 (24H2 or newer)            |         ✔️         |   ✔️    |
-|      Windows 10 LTSC 2021 (21H2)                     |         ✔️         |   ✔️    |
-|      Windows 10 LTSC 2019 (1809)                     |         ✔️         |   ✔️    |
-|              Windows 10 LTSB 2016 (1607)             |         ✔️         |   ✔️    |
-|              Windows 10 LTSB 2015 (1507)             |         ✔️         |   ✔️    |
+  |                   Windows Version                    | Activation Status | Tested  |
+  |:-----------------------------------------------------:|:-----------------:|:-------:|
+  |      Windows 11 LTSC 2024 (24H2 or newer)            |         ✔️         |   ✔️    |
+  |      Windows 10 LTSC 2021 (21H2)                     |         ✔️         |   ✔️    |
+  |      Windows 10 LTSC 2019 (1809)                     |         ✔️         |   ✔️    |
+  |              Windows 10 LTSB 2016 (1607)             |         ✔️         |   ✔️    |
+  |              Windows 10 LTSB 2015 (1507)             |         ✔️         |   ✔️    |
 
 <h2 align="center">Supported IoT Versions</h2>
 
-|                  IoT Version                          | Activation Status | Tested  |
-|:-----------------------------------------------------:|:-----------------:|:-------:|
-|      Windows 11 IoT 2024 (24H2 or newer)             |                  |       |
-|      Windows 10 IoT 2021 (21H2)                      |         ✔️         |       |
-|      Windows 10 IoT 2019 (1809)                      |         ✔️         |       |
+  |                  IoT Version                          | Activation Status | Tested  |
+  |:-----------------------------------------------------:|:-----------------:|:-------:|
+  |      Windows 11 IoT 2024 (24H2 or newer)             |                  |       |
+  |      Windows 10 IoT 2021 (21H2)                      |         ✔️         |       |
+  |      Windows 10 IoT 2019 (1809)                      |         ✔️         |       |
