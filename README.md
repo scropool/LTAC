@@ -33,4 +33,4 @@
   |      Windows 10 IoT 2021 (21H2)                      |         ❌        |   ✔️   |
   |      Windows 10 IoT 2019 (1809)                      |         ❌        |   ✔️   |
   
-<p align="center">If you use this tool in IoT versions your Windows will revert to normal LTSC. [Use this tool](https://github.com/sysconf16/ltsc-2021-activator) for IoT activation.</p>
+<p align="center">If you use this tool in IoT versions your Windows will revert to normal LTSC. <a href="https://github.com/sysconf16/ltsc-2021-activator">Use this tool</a> for IoT activation.</p>
