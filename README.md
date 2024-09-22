@@ -30,5 +30,5 @@
   |                  IoT Version                          | Activation Status | Tested  |
   |:-----------------------------------------------------:|:-----------------:|:-------:|
   |      Windows 11 IoT 2024 (24H2 or newer)             |                    |         |
-  |      Windows 10 IoT 2021 (21H2)                      |         ✔️         |   ✔️   |
-  |      Windows 10 IoT 2019 (1809)                      |         ✔️         |   ✔️   |
+  |      Windows 10 IoT 2021 (21H2)                      |                  |   ✔️   |
+  |      Windows 10 IoT 2019 (1809)                      |                  |   ✔️   |
