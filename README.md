@@ -16,8 +16,8 @@
 <hr>
 
 <h1 align="center">Supported Windows Versions</h1>
-<p align="center">• Windows 11 LTSC 2024 (24H2 or newer)</p>
+<p align="center">• Windows 11 LTSC 2024 & IoT 2024 (24H2 or newer)</p>
 <p align="center">• Windows 10 LTSC 2021 & IoT 2021 (21H2)</p>
-<p align="center">• Windows 10 LTSC 2019 (1809)</p>
+<p align="center">• Windows 10 LTSC 2019 & IoT 2019 (1809)</p>
 <p align="center">• Windows 10 LTSB 2016 (1607)</p>
 <p align="center">• Windows 10 LTSB 2015 (1507)</p>
