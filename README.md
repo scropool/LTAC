@@ -15,7 +15,7 @@
 <p align="center">• Made by scropool</p>
 <hr>
 
-<h1 align="center">Supported Windows Versions</h1>
+<h1 align="center">Supported LTSC Versions</h1>
 
   |                   Windows Version                    | Activation Status | Tested  |
   |:-----------------------------------------------------:|:-----------------:|:-------:|
