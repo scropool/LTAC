@@ -25,9 +25,7 @@
   |              Windows 10 LTSB 2016 (1607)             |         ✔️         |   ✔️    |
   |              Windows 10 LTSB 2015 (1507)             |         ✔️         |   ✔️    |
 
-<h2 align="center">Supported IoT Versions</h2>
-<p align="center">If you use this tool in IoT versions your Windows will revert to normal LTSC. <a href="https://github.com/sysconf16/ltsc-2021-activator">Use this tool</a> for IoT activation.</p>
-
+<h2 align="center">Supported IoT Versions( support will coming soon )</h2>
 
   |                  IoT Version                          | Activation Status | Tested  |
   |:-----------------------------------------------------:|:-----------------:|:-------:|
