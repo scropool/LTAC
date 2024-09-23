@@ -25,7 +25,7 @@
   |              Windows 10 LTSB 2016 (1607)             |         ✔️         |   ✔️    |
   |              Windows 10 LTSB 2015 (1507)             |         ✔️         |   ✔️    |
 
-<h2 align="center">Supported IoT Versions( support will coming soon )</h2>
+<h2 align="center">Supported IoT Versions ( support will coming soon )</h2>
 
   |                  IoT Version                          | Activation Status | Tested  |
   |:-----------------------------------------------------:|:-----------------:|:-------:|
